@@ -1,3 +1,12 @@
+<script setup>
+import AppCard from '@/components/ui/AppCard.vue'
+import AppButton from '@/components/ui/AppButton.vue'
+
+function handleRegister() {
+  alert('Registration feature is not available yet.')
+}
+</script>
+
 <template>
   <div class="event-detail-page">
     <button @click="$router.push('/browse/events')" class="btn-back">&larr; Back to Events</button>
@@ -48,13 +57,25 @@
         </ul>
       </div>
       <div class="sidebar">
-        <div class="ticket-card">
+        <AppCard class="ticket-card">
           <h3>Registration</h3>
+
           <p class="price">Free</p>
-          <p class="ticket-desc">Secure your spot today before it runs out.</p>
-          <button class="btn-register">Register Now</button>
+
+          <p class="ticket-desc">
+            Secure your spot today before it runs out.
+          </p>
+
+          <AppButton
+            variant="primary"
+            class="btn-register"
+            @click="handleRegister"
+          >
+            Register Now
+          </AppButton>
+
           <p class="spots">Only 45 spots left!</p>
-        </div>
+        </AppCard>
       </div>
     </div>
   </div>
